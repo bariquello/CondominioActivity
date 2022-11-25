@@ -5,7 +5,6 @@ public class Predio {
     private String apartamento;
 
     public Predio(){
-
     }
 
     public Predio(String bloco, String apartamento) {
