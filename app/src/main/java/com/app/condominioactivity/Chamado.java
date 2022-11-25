@@ -1,6 +1,8 @@
 package com.app.condominioactivity;
 
-public class Chamado {
+import java.io.Serializable;
+
+public class Chamado implements Serializable {
     private String titulo;
     private String descricao;
     private String idUsuario;
