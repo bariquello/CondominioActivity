@@ -1,15 +1,24 @@
 package com.app.condominioactivity;
 
-public class Usuario {
+import com.google.firebase.firestore.Exclude;
+
+import java.io.Serializable;
+
+public class Usuario implements Serializable {
+    @Exclude private String id;
+
     private String nome;
     private String predio;
 
     public Usuario(){
     }
 
-    public Usuario(String nome, String predio) {
-        this.nome = nome;
-        this.predio = predio;
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getNome() {

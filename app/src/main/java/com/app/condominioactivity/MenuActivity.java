@@ -9,13 +9,18 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
@@ -35,9 +40,21 @@ public class MenuActivity extends AppCompatActivity {
 
         user = FirebaseAuth.getInstance().getCurrentUser();
         edNome = findViewById(R.id.edNome);
-        edNome.setText(user.getEmail());
 
         listView = findViewById(R.id.listViewAviso);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        DocumentReference document = db.collection("usuario").document(user.getUid());
+        document.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                edNome.setText(value.getString("nome"));
+            }
+        });
     }
 
     @Override
@@ -72,6 +89,11 @@ public class MenuActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public void abriMenuPerfil(View view){
+        Intent intent = new Intent(getApplicationContext(), AtualizarPerfilActivity.class);
+        startActivity(intent);
     }
 
     public void abrirMenuAviso(View view){

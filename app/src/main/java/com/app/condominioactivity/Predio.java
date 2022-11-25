@@ -1,6 +1,9 @@
 package com.app.condominioactivity;
 
+import com.google.firebase.firestore.Exclude;
+
 public class Predio {
+    @Exclude private String id;
     private String bloco;
     private String apartamento;
 
@@ -10,6 +13,14 @@ public class Predio {
     public Predio(String bloco, String apartamento) {
         this.bloco = bloco;
         this.apartamento = apartamento;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getBloco() {
