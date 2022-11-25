@@ -6,12 +6,17 @@ import java.io.Serializable;
 
 public class Chamado implements Serializable {
     @Exclude private String id;
-
     private String titulo;
     private String descricao;
     private String idUsuario;
 
-    public Chamado() {
+    public Chamado(){
+    }
+
+    public Chamado(String titulo, String descricao, String idUsuario) {
+        this.titulo = titulo;
+        this.descricao = descricao;
+        this.idUsuario = idUsuario;
     }
 
     public String getId() {
@@ -38,11 +43,16 @@ public class Chamado implements Serializable {
         this.descricao = descricao;
     }
 
-    public String getIdUsuario() {
+    public String getIdUsuario(){
         return idUsuario;
     }
 
     public void setIdUsuario(String idUsuario) {
         this.idUsuario = idUsuario;
+    }
+
+    @Override
+    public String toString() {
+        return titulo + ": " + descricao;
     }
 }

@@ -33,6 +33,7 @@ public class ChamadoActivity extends AppCompatActivity {
         chamado.setTitulo(edTitulo.getText().toString());
         chamado.setDescricao(edDescricao.getText().toString());
         chamado.setIdUsuario(user);
+        chamado.setId(document.getId());
         document.set(chamado).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {

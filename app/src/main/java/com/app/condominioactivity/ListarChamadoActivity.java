@@ -1,5 +1,6 @@
 package com.app.condominioactivity;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -19,16 +20,16 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListChamadoActivity extends AppCompatActivity {
+public class ListarChamadoActivity extends AppCompatActivity {
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_chamado);
+        setContentView(R.layout.activity_listar_chamado);
 
-        listView = findViewById(R.id.listView);
+        listView = findViewById(R.id.listViewChamado);
     }
 
     @Override
@@ -58,7 +59,7 @@ public class ListChamadoActivity extends AppCompatActivity {
                         chamado = document.toObject(Chamado.class);
                         lista.add(chamado);
                     }
-                    ArrayAdapter<Chamado> arrayAdapter = new ArrayAdapter<>(ListChamadoActivity.this, android.R.layout.simple_list_item_1, lista);
+                    ArrayAdapter<Chamado> arrayAdapter = new ArrayAdapter<>(ListarChamadoActivity.this, android.R.layout.simple_list_item_1, lista);
                     listView.setAdapter(arrayAdapter);
                 }
             }

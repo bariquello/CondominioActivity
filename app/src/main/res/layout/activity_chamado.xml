@@ -21,7 +21,7 @@
         app:layout_constraintVertical_bias="0.047" />
 
     <EditText
-        android:id="@+id/edDescricao"
+        android:id="@+id/edDescricaoChamado"
         android:layout_width="360dp"
         android:layout_height="350dp"
         android:ems="10"
@@ -36,7 +36,7 @@
         app:layout_constraintVertical_bias="0.287" />
 
     <ImageButton
-        android:id="@+id/btAtualizarChamado"
+        android:id="@+id/btChamado"
         android:layout_width="126dp"
         android:layout_height="95dp"
         android:onClick="criarChamado"

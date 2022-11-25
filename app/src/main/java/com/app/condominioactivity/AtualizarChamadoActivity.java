@@ -2,7 +2,6 @@ package com.app.condominioactivity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,7 +21,6 @@ public class AtualizarChamadoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_atualizar_chamado);
 
         chamadoAtual = (Chamado) getIntent().getSerializableExtra("chamado");
-
         ((TextView)findViewById(R.id.edTituloChamado)).setText(chamadoAtual.getTitulo());
         ((TextView)findViewById(R.id.edDescricaoChamado)).setText(chamadoAtual.getDescricao());
     }
@@ -33,9 +31,9 @@ public class AtualizarChamadoActivity extends AppCompatActivity {
 
         DocumentReference document = db.collection("chamado").document(chamadoAtual.getId());
         document.update(
-                "titulo", titulo,
-                "descricao", descricao
-        )
+                        "titulo", titulo,
+                        "descricao", descricao
+                )
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
