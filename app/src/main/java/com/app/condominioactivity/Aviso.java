@@ -6,12 +6,18 @@ import java.io.Serializable;
 
 public class Aviso implements Serializable {
     @Exclude private String id;
-
     private String titulo;
     private String descricao;
     private String idUsuario;
 
     public Aviso() {
+    }
+
+    public Aviso(String id, String titulo, String descricao, String idUsuario) {
+        this.id = id;
+        this.titulo = titulo;
+        this.descricao = descricao;
+        this.idUsuario = idUsuario;
     }
 
     public String getId() {
@@ -44,5 +50,10 @@ public class Aviso implements Serializable {
 
     public void setIdUsuario(String idUsuario) {
         this.idUsuario = idUsuario;
+    }
+
+    @Override
+    public String toString() {
+        return titulo + ": " + descricao;
     }
 }

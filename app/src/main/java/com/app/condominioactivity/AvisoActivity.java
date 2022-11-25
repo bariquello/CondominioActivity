@@ -33,6 +33,7 @@ public class AvisoActivity extends AppCompatActivity {
         aviso.setTitulo(edTitulo.getText().toString());
         aviso.setDescricao(edDescricao.getText().toString());
         aviso.setIdUsuario(user);
+        aviso.setId(document.getId());
         document.set(aviso).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
