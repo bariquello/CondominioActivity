@@ -64,7 +64,7 @@
       android:id="@+id/imageButton"
       android:layout_width="79dp"
       android:layout_height="78dp"
-      android:onClick="abrirAviso"
+      android:onClick="abrirMenuAviso"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintHorizontal_bias="0.09"
@@ -77,7 +77,7 @@
       android:id="@+id/btAbrirChamado"
       android:layout_width="120dp"
       android:layout_height="84dp"
-      android:onClick="abrirChamado"
+      android:onClick="abrirMenuCadastroChamado"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintHorizontal_bias="0.498"
@@ -100,7 +100,7 @@
       app:layout_constraintVertical_bias="0.528" />
 
   <ListView
-      android:id="@+id/listView"
+      android:id="@+id/listViewAviso"
       android:layout_width="327dp"
       android:layout_height="169dp"
       app:layout_constraintBottom_toBottomOf="parent"
@@ -123,10 +123,10 @@
       app:layout_constraintVertical_bias="0.026" />
 
   <Button
-      android:id="@+id/btAtualizarChamado"
+      android:id="@+id/btChamado"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:onClick="carregarChamado"
+      android:onClick="abrirMenuListChamado"
       android:text="Chamado"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"

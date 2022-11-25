@@ -3,6 +3,7 @@ package com.app.condominioactivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -36,13 +37,23 @@ public class MenuActivity extends AppCompatActivity {
         edNome = findViewById(R.id.edNome);
         edNome.setText(user.getEmail());
 
-        listView = findViewById(R.id.listView);
+        listView = findViewById(R.id.listViewAviso);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         listarAviso();
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Aviso aviso = (Aviso) parent.getItemAtPosition(position);
+                Intent intent = new Intent(getApplicationContext(), AtualizarAvisoActivity.class);
+                intent.putExtra("aviso", aviso);
+                startActivity(intent);
+            }
+        });
     }
 
     public void listarAviso(){
@@ -74,7 +85,7 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     public void abrirMenuListChamado(View view){
-        Intent intent = new Intent(getApplicationContext(), ListChamadoActivity.class);
+        Intent intent = new Intent(getApplicationContext(), ListarChamadoActivity.class);
         startActivity(intent);
     }
 
