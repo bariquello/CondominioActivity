@@ -14,6 +14,18 @@
         android:theme="@style/Theme.CondominioActivity"
         tools:targetApi="31">
         <activity
+            android:name=".AtualizarPerfilActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AtualizarChamadoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ListarChamadoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AtualizarAvisoActivity"
+            android:exported="false" />
+        <activity
             android:name=".ChamadoActivity"
             android:exported="false" />
         <activity
