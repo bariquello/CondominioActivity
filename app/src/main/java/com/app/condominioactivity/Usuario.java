@@ -2,12 +2,12 @@ package com.app.condominioactivity;
 
 public class Usuario {
     private String nome;
-    private Predio predio;
+    private String predio;
 
     public Usuario(){
     }
 
-    public Usuario(String nome, Predio predio) {
+    public Usuario(String nome, String predio) {
         this.nome = nome;
         this.predio = predio;
     }
@@ -20,11 +20,11 @@ public class Usuario {
         this.nome = nome;
     }
 
-    public Predio getPredio() {
+    public String getPredio() {
         return predio;
     }
 
-    public void setPredio(Predio predio) {
+    public void setPredio(String predio) {
         this.predio = predio;
     }
 }

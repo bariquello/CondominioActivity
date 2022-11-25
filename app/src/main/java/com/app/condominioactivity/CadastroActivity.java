@@ -10,15 +10,19 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class CadastroActivity extends AppCompatActivity {
     private static final String TAG = "EmailSenha";
     private FirebaseAuth mAuth;
-    private EditText edEmail, edSenha;
+    private EditText edEmail, edSenha, edNome, edBloco, edApartamento;
+    private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +32,9 @@ public class CadastroActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         edEmail = findViewById(R.id.edEmail);
         edSenha = findViewById(R.id.edSenha);
+        edNome = findViewById(R.id.edNome);
+        edBloco = findViewById(R.id.edBloco);
+        edApartamento = findViewById(R.id.edApartamento);
     }
 
     public void criarUsuario(View view){
@@ -38,6 +45,7 @@ public class CadastroActivity extends AppCompatActivity {
                         if (task.isSuccessful()){
                             Log.d(TAG, "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
+                            salvarDadosPredio();
                             Toast.makeText(CadastroActivity.this, "Usuário criado com sucesso!",
                                 Toast.LENGTH_SHORT).show();
                         } else {
@@ -48,5 +56,31 @@ public class CadastroActivity extends AppCompatActivity {
                         }
                     }
                 });
+    }
+
+    public void salvarDadosPredio(){
+        Predio predio = new Predio();
+        DocumentReference document = db.collection("predio").document();
+        predio.setBloco(edBloco.getText().toString());
+        predio.setApartamento(edApartamento.getText().toString());
+        document.set(predio).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void unused) {
+                String idPredio = document.getId();
+                salvarDadosUsuario(idPredio);
+            }
+        });
+    }
+
+    public void salvarDadosUsuario(String idPredio){
+        Usuario usuario = new Usuario();
+        DocumentReference document = db.collection("usuario").document();
+        usuario.setNome(edNome.getText().toString());
+        usuario.setPredio(idPredio);
+        document.set(usuario).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void unused) {
+            }
+        });
     }
 }
