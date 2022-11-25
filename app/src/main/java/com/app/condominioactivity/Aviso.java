@@ -1,11 +1,25 @@
 package com.app.condominioactivity;
 
-public class Aviso {
+import com.google.firebase.firestore.Exclude;
+
+import java.io.Serializable;
+
+public class Aviso implements Serializable {
+    @Exclude private String id;
+
     private String titulo;
     private String descricao;
     private String idUsuario;
 
     public Aviso() {
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getTitulo() {
