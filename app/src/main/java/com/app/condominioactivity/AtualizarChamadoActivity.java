@@ -14,7 +14,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class AtualizarChamadoActivity extends AppCompatActivity {
     private Chamado chamadoAtual;
-    private EditText edTituloChamado, edDescricaoChamado;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
@@ -29,8 +28,8 @@ public class AtualizarChamadoActivity extends AppCompatActivity {
     }
 
     public void atualizarChamado(View view){
-        String titulo = edTituloChamado.getText().toString();
-        String descricao = edDescricaoChamado.getText().toString();
+        String titulo = ((TextView)findViewById(R.id.edTituloChamado)).getText().toString();
+        String descricao = ((TextView)findViewById(R.id.edDescricaoChamado)).getText().toString();
 
         DocumentReference document = db.collection("chamado").document(chamadoAtual.getId());
         document.update(
