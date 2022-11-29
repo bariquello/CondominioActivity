@@ -61,6 +61,7 @@ public class CadastroActivity extends AppCompatActivity {
     public void salvarDadosPredio(){
         Predio predio = new Predio();
         DocumentReference document = db.collection("predio").document();
+        predio.setId(document.getId());
         predio.setBloco(edBloco.getText().toString());
         predio.setApartamento(edApartamento.getText().toString());
         document.set(predio).addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -74,9 +75,10 @@ public class CadastroActivity extends AppCompatActivity {
 
     public void salvarDadosUsuario(String idPredio){
         Usuario usuario = new Usuario();
-        DocumentReference document = db.collection("usuario").document();
+        DocumentReference document = db.collection("usuario").document(mAuth.getUid());
         usuario.setNome(edNome.getText().toString());
         usuario.setPredio(idPredio);
+        usuario.setId(document.getId());
         document.set(usuario).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
