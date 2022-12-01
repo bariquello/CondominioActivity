@@ -6,6 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".MenuActivity">
 
+  <ImageButton
+      android:id="@+id/btChamado"
+      android:layout_width="84dp"
+      android:layout_height="84dp"
+      android:onClick="abrirMenuListChamado"
+      android:src="@mipmap/ic_chamado_foreground"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.908"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.959" />
+
   <TextView
       android:id="@+id/txtBemVindo"
       android:layout_width="wrap_content"
@@ -33,17 +46,18 @@
       app:layout_constraintTop_toTopOf="parent"
       app:layout_constraintVertical_bias="0.046" />
 
-    <ImageButton
-        android:id="@+id/btOut"
-        android:layout_width="92dp"
-        android:layout_height="67dp"
-        android:onClick="sairUsuario"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.053"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.96" />
+  <ImageButton
+      android:id="@+id/btOut"
+      android:layout_width="74dp"
+      android:layout_height="83dp"
+      android:onClick="sairUsuario"
+      android:src="@mipmap/ic_sair_foreground"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.053"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.96" />
       //app:srcCompat="@mipmap/icon_login_out_foreground" />
 
   <TextView
@@ -65,6 +79,7 @@
       android:layout_width="79dp"
       android:layout_height="78dp"
       android:onClick="abrirMenuAviso"
+      android:src="@mipmap/ic_aviso_foreground"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintHorizontal_bias="0.09"
@@ -73,17 +88,18 @@
       app:layout_constraintVertical_bias="0.101" />
       //app:srcCompat="@mipmap/icon_avisos_foreground" />
 
-  <ImageButton
-      android:id="@+id/btAbrirChamado"
-      android:layout_width="120dp"
-      android:layout_height="84dp"
-      android:onClick="abrirMenuCadastroChamado"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.498"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.61" />
+    <ImageButton
+        android:id="@+id/btAbrirChamado"
+        android:layout_width="97dp"
+        android:layout_height="84dp"
+        android:onClick="abrirMenuCadastroChamado"
+        android:src="@mipmap/ic_chamado_foreground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.61" />
       //app:srcCompat="@mipmap/icon_CHAMADO_foreground" />
 
   <TextView
@@ -109,30 +125,31 @@
       app:layout_constraintTop_toTopOf="parent"
       app:layout_constraintVertical_bias="0.314" />
 
-  <Button
+  <ImageButton
       android:id="@+id/btAtualizarPerfil"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
+      android:layout_width="58dp"
+      android:layout_height="56dp"
       android:onClick="abriMenuPerfil"
-      android:text="Perfil"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.879"
+      app:layout_constraintHorizontal_bias="0.878"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.026" />
+      app:layout_constraintVertical_bias="0.023"
+      app:srcCompat="@mipmap/ic_user_foreground" />
 
-  <Button
-      android:id="@+id/btChamado"
+  <TextView
+      android:id="@+id/txtChamados"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:onClick="abrirMenuListChamado"
-      android:text="Chamado"
+      android:fontFamily="sans-serif-black"
+      android:text="Chamados Abertos"
+      android:textAppearance="@style/TextAppearance.AppCompat.Body2"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.895"
+      app:layout_constraintHorizontal_bias="0.944"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.934" />
+      app:layout_constraintVertical_bias="0.845" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

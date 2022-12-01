@@ -41,6 +41,7 @@
         android:layout_width="110dp"
         android:layout_height="73dp"
         android:onClick="loginUsuario"
+        android:src="@mipmap/ic_login_foreground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.262"
@@ -53,6 +54,7 @@
         android:layout_width="105dp"
         android:layout_height="75dp"
         android:onClick="abrirCadastro"
+        android:src="@mipmap/ic_create_foreground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.745"
@@ -83,5 +85,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.422" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="312dp"
+        android:layout_height="280dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.926"
+        app:srcCompat="@mipmap/ic_vizinhos1_foreground" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

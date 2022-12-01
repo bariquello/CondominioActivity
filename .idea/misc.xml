@@ -3,6 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/2 - Sources/Android Studio/ProjetoP2/CondominioActivity/app/src/main/res/layout/activity_atualizar_aviso.xml" value="0.22826086956521738" />
+        <entry key="..\:/2 - Sources/Android Studio/ProjetoP2/CondominioActivity/app/src/main/res/layout/activity_atualizar_chamado.xml" value="0.22826086956521738" />
+        <entry key="..\:/2 - Sources/Android Studio/ProjetoP2/CondominioActivity/app/src/main/res/layout/activity_atualizar_perfil.xml" value="0.22826086956521738" />
+        <entry key="..\:/2 - Sources/Android Studio/ProjetoP2/CondominioActivity/app/src/main/res/layout/activity_aviso.xml" value="0.22826086956521738" />
+        <entry key="..\:/2 - Sources/Android Studio/ProjetoP2/CondominioActivity/app/src/main/res/layout/activity_cadastro.xml" value="0.22826086956521738" />
+        <entry key="..\:/2 - Sources/Android Studio/ProjetoP2/CondominioActivity/app/src/main/res/layout/activity_chamado.xml" value="0.22826086956521738" />
+        <entry key="..\:/2 - Sources/Android Studio/ProjetoP2/CondominioActivity/app/src/main/res/layout/activity_listar_chamado.xml" value="0.22826086956521738" />
+        <entry key="..\:/2 - Sources/Android Studio/ProjetoP2/CondominioActivity/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/2 - Sources/Android Studio/ProjetoP2/CondominioActivity/app/src/main/res/layout/activity_menu.xml" value="0.22826086956521738" />
         <entry key="app/src/main/res/layout/activity_atualizar_aviso.xml" value="0.33106884057971014" />
         <entry key="app/src/main/res/layout/activity_atualizar_chamado.xml" value="0.33106884057971014" />
         <entry key="app/src/main/res/layout/activity_atualizar_perfil.xml" value="0.33106884057971014" />

@@ -22,6 +22,7 @@
         android:layout_width="105dp"
         android:layout_height="75dp"
         android:onClick="criarUsuario"
+        android:src="@mipmap/ic_create_foreground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
